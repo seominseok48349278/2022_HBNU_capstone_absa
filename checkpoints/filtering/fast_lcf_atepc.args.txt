@@ -1,0 +1,38 @@
+model: <class 'pyabsa.core.atepc.models.fast_lcf_atepc.FAST_LCF_ATEPC'>
+optimizer: adamw
+learning_rate: 2e-05
+pretrained_bert: kykim/bert-kor-base
+cache_dataset: True
+warmup_step: -1
+use_bert_spc: True
+max_seq_len: 80
+SRD: 3
+use_syntax_based_SRD: False
+lcf: cdw
+dropout: 0.5
+l2reg: 1e-05
+num_epoch: 10
+batch_size: 16
+seed: 52
+polarities_dim: 2
+log_step: 50
+patience: 99999
+gradient_accumulation_steps: 1
+dynamic_truncate: True
+evaluate_begin: 0
+hidden_dim: 768
+dataset_name: custom_dataset
+dataset_file: {'train': ['/home/jaehyeok/jupyter_workspace//ABSADatasets/datasets/atepc_datasets/100.CustomDataset/custom.train.txt.atepc'], 'test': ['/home/jaehyeok/jupyter_workspace//ABSADatasets/datasets/atepc_datasets/100.CustomDataset/custom.test.txt.atepc'], 'valid': []}
+device: cuda:2
+auto_device: True
+model_name: fast_lcf_atepc
+save_mode: 1
+model_path_to_save: checkpoints
+sep_indices: 3
+spacy_model: en_core_web_sm
+IOB_label_to_index: {'B-ASP': 1, 'I-ASP': 2, 'O': 3, '[CLS]': 4, '[SEP]': 5}
+index_to_label: {0: 'Negative', 1: 'Positive'}
+label_list: ['B-ASP', 'I-ASP', 'O', '[CLS]', '[SEP]']
+num_labels: 6
+max_test_metrics: {'max_apc_test_acc': 100.0, 'max_apc_test_f1': 100.0, 'max_ate_test_f1': 97.67}
+metrics_of_this_checkpoint: {'apc_acc': 100.0, 'apc_f1': 100.0, 'ate_f1': 97.67}
