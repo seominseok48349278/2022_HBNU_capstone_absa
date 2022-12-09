@@ -6,3 +6,4 @@
 *.config filter=lfs diff=lfs merge=lfs -text
 *.py filter=lfs diff=lfs merge=lfs -text
 *.pyc filter=lfs diff=lfs merge=lfs -text
+aspect_extractors.pickle filter=lfs diff=lfs merge=lfs -text
